@@ -1,6 +1,6 @@
 // backend/routes/auth.js
 import express from "express";
-import { loginController } from "../controllers/authController.js"; // make sure path is correct
+import { loginController } from "./AuthController.js"; // Fixed path for flat structure
 
 const router = express.Router();
 

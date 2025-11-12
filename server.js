@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import authRoutes from "./routes/auth.js";
+import authRoutes from "./auth.js"; // Fixed path for flat structure
 
 dotenv.config();
 
