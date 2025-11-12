@@ -1,22 +1,11 @@
-import { defineStore } from "pinia";
+// backend/routes/auth.js
+import express from "express";
+import { loginController } from "../controllers/authController.js"; // make sure path is correct
 
-export const useAuthStore = defineStore("auth", {
-  state: () => ({
-    token: localStorage.getItem("token") || null,
-    user: null
-  }),
-  actions: {
-    setToken(token) {
-      this.token = token;
-      localStorage.setItem("token", token);
-    },
-    setUser(user) {
-      this.user = user;
-    },
-    logout() {
-      this.token = null;
-      this.user = null;
-      localStorage.removeItem("token");
-    }
-  }
-});
+const router = express.Router();
+
+// Login route
+router.post("/", loginController);
+
+export default router;
+
